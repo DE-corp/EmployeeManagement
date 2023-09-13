@@ -13,7 +13,7 @@
     </Window.DataContext>
 
     <Grid>
-        <ListView  ItemsSource="{Binding Employees}" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="792">
+        <ListView PreviewMouseDoubleClick="ListView_PreviewMouseDoubleClick" ItemsSource="{Binding Employees}" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="792">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="auto" DisplayMemberBinding="{Binding LastName}" >
