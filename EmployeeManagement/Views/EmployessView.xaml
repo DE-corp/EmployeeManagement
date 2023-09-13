@@ -20,7 +20,13 @@
                         <GridViewColumnHeader Content="Возраст"></GridViewColumnHeader>
                     </GridViewColumn>
                     <GridViewColumn Width="auto">
-                        <GridViewColumnHeader Content="Место работы"></GridViewColumnHeader>
+                        <GridViewColumnHeader Content="Компания"></GridViewColumnHeader>
+                    </GridViewColumn>
+                    <GridViewColumn Width="auto">
+                        <GridViewColumnHeader Content="Должность"></GridViewColumnHeader>
+                    </GridViewColumn>
+                    <GridViewColumn Width="auto">
+                        <GridViewColumnHeader Content="Город"></GridViewColumnHeader>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
