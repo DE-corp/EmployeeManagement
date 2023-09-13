@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace EmployeeManagement.Views
 {
     /// <summary>
-    /// Логика взаимодействия для EmployessView.xaml
+    /// Логика взаимодействия для EmployeesView.xaml
     /// </summary>
-    public partial class EmployessView : Window
+    public partial class EmployeesView : Window
     {
-        public EmployessView()
+        public EmployeesView()
         {
             InitializeComponent();
         }
