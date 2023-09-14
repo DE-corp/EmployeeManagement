@@ -13,7 +13,7 @@
     </Window.DataContext>
 
     <Grid>
-        <ListView PreviewMouseDoubleClick="ListView_PreviewMouseDoubleClick" ItemsSource="{Binding Employees}" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="792">
+        <ListView PreviewMouseDoubleClick="ListView_PreviewMouseDoubleClick" ItemsSource="{Binding Employees,  UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="792" Margin="0,50,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="auto" DisplayMemberBinding="{Binding LastName}" >
@@ -37,6 +37,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
+        <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+        <TextBlock HorizontalAlignment="Left" Margin="172,15,0,0" TextWrapping="Wrap" Text="{Binding FilterMessage}" VerticalAlignment="Top"/>
     </Grid>
 </Window>
