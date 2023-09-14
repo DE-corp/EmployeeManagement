@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace EmployeeManagement.ViewModels
 {
-    class EmployeesViewModel : INotifyPropertyChanged
+    class EmployeesViewModel : INotifyPropertyChanged, IEmployeesViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -16,10 +16,10 @@ namespace EmployeeManagement.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        private EmployeeRepository _employeeRepository;
-        public EmployeesViewModel()
+        private IEmployeeRepository _employeeRepository;
+        public EmployeesViewModel(IEmployeeRepository employeeRepository)
         {
-            _employeeRepository = new EmployeeRepository();
+            _employeeRepository = employeeRepository;
             FillListView();
             FillFilterMessage();
         }

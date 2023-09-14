@@ -8,10 +8,6 @@
         mc:Ignorable="d"
         Title="EmployeesView" Height="450" Width="800">
 
-    <Window.DataContext>
-        <vm:EmployeesViewModel></vm:EmployeesViewModel>
-    </Window.DataContext>
-
     <Grid>
         <ListView PreviewMouseDoubleClick="ListView_PreviewMouseDoubleClick" ItemsSource="{Binding Employees,  UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="792" Margin="0,50,0,0">
             <ListView.View>
