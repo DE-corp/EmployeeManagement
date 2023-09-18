@@ -11,8 +11,13 @@ namespace EmployeeManagement.Views
     /// </summary>
     public partial class EmployeesView : Window
     {
-        public EmployeesView(IEmployeesViewModel employeesViewModel)
+        private IEmployeeViewModel _employeeViewModel;
+        private IEmployeesViewModel _employeesViewModel;
+        public EmployeesView(IEmployeesViewModel employeesViewModel, IEmployeeViewModel employeeViewModel)
         {
+            _employeeViewModel = employeeViewModel;
+            _employeesViewModel = employeesViewModel;
+
             InitializeComponent();
             DataContext = employeesViewModel;
         }
@@ -28,17 +33,11 @@ namespace EmployeeManagement.Views
 
             var employee = item as Employee;
 
-            MessageBox.Show(Message(employee));
-        }
+            _employeeViewModel.Employee = employee;
 
-        private string Message(Employee employee)
-        {
-            return "Имя: " + employee.FirstName + "\n" +
-                "Фамилия: " + employee.LastName + "\n" +
-                "Возраст: " + employee.Age + "\n" +
-                "Должность: " + employee.Position + "\n" +
-                "Компания: " + employee.CompanyName + "\n" +
-                "Город: " + employee.CityName;
+            var employeeView = new EmployeeView(_employeeViewModel);
+
+            employeeView.Show();
         }
     }
 }
